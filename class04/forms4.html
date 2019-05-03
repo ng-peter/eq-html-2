@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Forms - Different Types of Inputs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="textinput">Text Input</label>
+        <input
+          id="textinput"
+          name="textinput"
+          type="text"
+          placeholder="Some text"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">Email: </label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div>
+        <input type="checkbox" name="samecheckbox" value="1" />Selection 1
+        <br />
+        <input type="checkbox" name="samecheckbox" value="2" />Selection 2
+        <br />
+        <input type="checkbox" name="samecheckbox" value="3" checked />Selection
+        3
+        <br />
+        <input type="checkbox" name="samecheckbox" value="4" />Selection 4
+        <br />
+        <input type="checkbox" name="samecheckbox" value="5" checked />Selection
+        5
+        <br />
+      </div>
+      <div>
+        <input type="radio" name="radio" />Selection 1
+        <br />
+        <input type="radio" name="radio" />Selection 2
+        <br />
+        <input type="radio" name="radio" checked />Selection 3
+        <br />
+        <input type="radio" name="radio" />Selection 4
+        <br />
+        <input type="radio" name="radio" />Selection 5
+        <br />
+      </div>
+      <div>
+        <input type="color" name="color" value="#cccccc" />
+        <input type="date" name="date" />
+        <input type="datetime-local" />
+        <input type="file" />
+        <input type="hidden" />
+        <input type="image" />
+        <input type="month" />
+        <input type="number" />
+        <input type="range" name="range" />
+
+        <input
+          type="tel"
+          required
+          name="phone"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          placeholder="xxx-xxx-xxxx"
+        />
+
+        <input type="time" />
+        <input type="url" required />
+        <input type="week" />
+      </div>
+      <div></div>
+      <div>
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+      </div>
+    </form>
+  </body>
+</html>

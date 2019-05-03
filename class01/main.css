@@ -1,0 +1,7 @@
+#para1 {
+  color: red;
+}
+.green {
+  color: rgb(255, 0, 255, 1);
+  background-color: rgb(255, 0, 255, 0.05);
+}

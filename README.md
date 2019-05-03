@@ -1,1 +1,2 @@
-# eq-html-2
+# HTML - Intermediate's Course
+

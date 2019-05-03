@@ -1,0 +1,30 @@
+.active {
+  color: orangered;
+}
+
+.nav-tabs {
+  padding-top: 19px;
+}
+
+.content,
+.sidebar,
+.nav-tabs .nav-link.active {
+  background-color: lightblue;
+}
+
+.nav-tabs .nav-link {
+  border-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#about .content,
+#about .sidebar,
+#about .nav-tabs .nav-link.active {
+  background-color: lightsalmon;
+}
+
+#cart .content,
+#cart .sidebar,
+#cart .nav-tabs .nav-link.active {
+  background-color: lightseagreen;
+}
