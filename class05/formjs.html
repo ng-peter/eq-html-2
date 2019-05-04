@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Form example with javascrip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+      #zip.error {
+        background-color: palegreen;
+        color: black;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+    <script>
+      function validatePostal() {
+        let postalRegex = /[A-Z][0-9][A-Z][0-9][A-Z][0-9]/;
+        console.log("Postal data: ", document.postalForm.zip.value);
+        // alert("Postal data: " + document.postalForm.zip.value);
+        if (document.postalForm.zip.value === "") {
+          // console.warn("Oh noes! it's empty!");
+          document.getElementById("zipError").textContent =
+            "Oh noes! it's empty!";
+          document.postalForm.zip.classList.add("error");
+          return false;
+        } else if (document.postalForm.zip.value.length !== 6) {
+          // console.warn("we need exactly 6 characters");
+          document.getElementById("zipError").textContent =
+            "we need exactly 6 characters";
+          document.postalForm.zip.classList.add("error");
+          return false;
+        } else if (
+          !document.postalForm.zip.value.toUpperCase().match(postalRegex)
+        ) {
+          /* console.warn(
+            document.postalForm.zip.value,
+            " is not a valid postal code!"
+          ); */
+          document.getElementById("zipError").textContent =
+            document.postalForm.zip.value + " is not a valid postal code!";
+          document.postalForm.zip.classList.add("error");
+          return false;
+        } else {
+          document.getElementById("zipError").textContent = "";
+          document.postalForm.zip.classList.remove("error");
+        }
+
+        return false;
+      }
+
+      // strong email regex
+      let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      // this is regex for strong password
+      let strongRegex = new RegExp(
+        "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})"
+      );
+    </script>
+  </head>
+  <body>
+    <form id="postalForm" name="postalForm" onsubmit="return validatePostal()">
+      <div>
+        <label for="zip"> Postal Code</label>
+        <span id="zipError" class="error"></span>
+      </div>
+      <div>
+        <input id="zip" name="zip" type="text" placeholder="X1X1X1" />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
